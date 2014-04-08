@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.AnchorPane" id="AnchorPane" prefHeight="476.9998779296875" prefWidth="481.999755859375" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <VBox prefHeight="410.9998779296875" prefWidth="408.999755859375" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <AnchorPane prefHeight="135.0" prefWidth="482.0">
+          <children>
+            <GridPane hgap="6.0" layoutX="8.0" layoutY="8.0" prefHeight="81.0" prefWidth="167.0" vgap="6.0">
+              <children>
+                <Button fx:id="playButton" mnemonicParsing="false" onAction="#onPlayPressed" prefWidth="80.0" text="PLAY" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button mnemonicParsing="false" prefWidth="80.0" text="PAUSE" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button mnemonicParsing="false" prefWidth="80.0" text="STOP" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Button mnemonicParsing="false" prefWidth="80.0" text="PREV" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Button mnemonicParsing="false" prefWidth="80.0" text="NEXT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button mnemonicParsing="false" onAction="#onOpenPressed" prefWidth="80.0" text="OPEN" textAlignment="LEFT" textFill="#00e0ff" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <AnchorPane layoutX="175.0" layoutY="0.0" prefHeight="135.00009155273438" prefWidth="307.0">
+              <children>
+                <BarChart fx:id="barChart" minHeight="136.0" prefHeight="136.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <xAxis>
+                    <CategoryAxis fx:id="xAxis" autoRanging="true" gapStartAndEnd="false" side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis fx:id="yAxis" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                  </yAxis>
+                </BarChart>
+              </children>
+            </AnchorPane>
+            <HBox layoutX="8.0" layoutY="104.0" prefHeight="21.0" prefWidth="167.0" spacing="10.0">
+              <children>
+                <Label text="VOL" />
+                <Slider fx:id="sliderVolume" prefWidth="121.0" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="308.0" prefWidth="482.0">
+          <children>
+            <ScrollPane hbarPolicy="ALWAYS" pannable="true" prefHeight="308.0" prefWidth="482.0" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <content>
+                <ListView id="listPlayList" fx:id="playListView" prefHeight="294.0" prefWidth="481.0" />
+              </content>
+            </ScrollPane>
+          </children>
+        </AnchorPane>
+        <Slider fx:id="sliderProgres" prefHeight="33.9998779296875" prefWidth="482.0" />
+      </children>
+    </VBox>
+  </children>
+</fx:root>
